@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d14"><title>Atlas — Fortnite Item Shop</title>
+<meta name="description" content="Browse the current Fortnite Item Shop with Atlas.">
+<link rel="stylesheet" href="styles.css"><script defer src="app.js"></script>
+</head><body>
+<header class="topbar"><a class="brand" href="#"><span class="mark">A</span><span>ATLAS<span class="green">.</span><small>FORTNITE SHOP</small></span></a><div class="live"><i></i> LIVE SHOP <button id="refreshTop" aria-label="Refresh">↻</button></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">— YOUR DAILY DROP</p><h1>THE ITEM SHOP<span>.<br>REIMAGINED.</span></h1><p class="intro">The current Fortnite shop, all in one place. Browse cosmetics, search the rotation, and save or share the shop image.</p><div class="connection"><i id="statusDot"></i><span id="statusText">Connecting to Atlas API…</span><b>·</b><span id="updatedText">Not updated yet</span></div></div><div class="hero-art"><div class="ring"></div><div class="heroA">A</div><label>ATLAS <b>LIVE</b></label></div></section>
+<section class="toolbar"><input id="searchInput" type="search" placeholder="⌕   Search cosmetics…" aria-label="Search cosmetics"><div class="controls"><select id="sortSelect" aria-label="Sort items"><option value="default">Shop order</option><option value="name">Name A–Z</option><option value="price-high">Price: high to low</option><option value="price-low">Price: low to high</option></select><button class="btn quiet" id="shareButton">↗ Share site</button><button class="btn primary" id="refreshButton">↻ Refresh</button></div></section>
+<section class="section-head"><div><p class="eyebrow">THE ROTATION</p><h2>Today's cosmetics <small id="itemCount">—</small></h2></div><span>Auto-refreshes every 5 minutes</span></section>
+<div id="errorPanel" class="error" hidden><b>Couldn't load the shop.</b><span id="errorText">Check the API and try again.</span><button class="btn quiet" id="retryButton">Try again</button></div>
+<div id="loadingPanel" class="grid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+<section id="itemsGrid" class="grid" aria-live="polite"></section><div id="emptyPanel" class="empty" hidden>No items match that search.</div>
+<section class="share-panel"><div><p class="eyebrow">READY TO POST</p><h2>Share the whole shop.</h2><p class="muted">Generate the current shop poster from your Atlas API, then save it or send it to your friends.</p><div class="share-actions"><a class="btn primary" id="openImage" href="https://atlas-server-add3.onrender.com/api/shop/image" target="_blank" rel="noopener">▧ Open shop image</a><button class="btn quiet" id="downloadImage">↓ Download PNG</button><button class="btn quiet" id="shareImage">↗ Share image</button></div></div><div class="poster"><div class="poster-head">ATLAS / ITEM SHOP <b>● LIVE</b></div><div class="poster-tiles"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="poster-foot">THE CURRENT ROTATION <b>ATLAS.</b></div><small>GENERATED ON DEMAND · PNG</small></div></section>
+</main><footer><b>ATLAS<span class="green">.</span></b><p>Unofficial fan project. Not affiliated with or endorsed by Epic Games.</p><a href="https://atlas-server-add3.onrender.com/docs" target="_blank" rel="noopener">API docs ↗</a><span id="footerApiStatus">API status unknown</span></footer><div id="toast" class="toast" role="status"></div>
+</body></html>
